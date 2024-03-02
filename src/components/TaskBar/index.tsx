@@ -16,6 +16,7 @@ export const TaskBar: FC = () => {
       <StartMenuButton />
       <div className="h-full border border-l-[#808080] border-r-white" />
       <RunningApps />
+      <div className="h-full border border-l-[#808080] border-r-white" />
       <SystemTray />
     </div>
   );
@@ -63,16 +64,20 @@ const RunningApps: FC = () => {
   };
 
   return (
-    <div className="flex w-full gap-1.5 overflow-clip">
+    <div
+      className={cn("grid w-full gap-1 md:flex md:gap-1.5")}
+      style={{
+        gridTemplateColumns: `repeat(${openedWindows.length}, minmax(0, 1fr))`,
+      }}
+    >
       {openedWindowsOrder.map((windowId) => {
         const window = openedWindows.find((window) => window.id === windowId);
-
         if (window && window.altImage && window.imageSrc) {
           return (
             <button
               key={window.id}
               className={cn(
-                "flex h-[30px] w-full max-w-28 items-center gap-1.5 border-2 border-black pl-1 text-xs font-bold md:max-w-36 md:text-sm",
+                "flex h-[30px] w-full max-w-28 items-center gap-1.5 overflow-clip border-2 border-black px-1 text-xs font-bold md:max-w-36 md:text-sm",
                 window.isMinimized || focusedWindow.id !== window.id
                   ? "border-l-white border-t-white bg-[#d6d6cf]"
                   : "active-window border-b-white border-r-white",
@@ -108,7 +113,7 @@ const SystemTray: FC = () => {
       <div className="relative mr-1.5 h-5 w-5 md:mr-3 md:h-6 md:w-6">
         <Image priority fill alt="Sound" src="/icons/sound.png" />
       </div>
-      <p suppressContentEditableWarning className="truncate">
+      <p className="text-nowrap">
         {time.toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "numeric",

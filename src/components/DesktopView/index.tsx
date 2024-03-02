@@ -12,6 +12,7 @@ import { Biography } from "../Apps/Biography";
 import { Resume } from "../Apps/Resume";
 import { Projects } from "../Apps/Projects";
 import { Mail } from "../Apps/Mail";
+import Link from "next/link";
 
 export const DesktopView = () => {
   const { openedWindows, openWindow } = useWindowStore();
@@ -23,7 +24,8 @@ export const DesktopView = () => {
       {
         label: "Biography",
         imageSrc: "/icons/computer.png",
-        onDoubleClick: () => {
+        altImage: "Computer",
+        onOpen: () => {
           openWindow({
             id: "biography",
             title: "Biography",
@@ -39,7 +41,8 @@ export const DesktopView = () => {
       {
         label: "Résumé",
         imageSrc: "/icons/document.png",
-        onDoubleClick: () => {
+        altImage: "Document",
+        onOpen: () => {
           openWindow({
             id: "résumé",
             title: "Résumé",
@@ -55,7 +58,8 @@ export const DesktopView = () => {
       {
         label: "Projects",
         imageSrc: "/icons/briefcase.png",
-        onDoubleClick: () => {
+        altImage: "Briefcase",
+        onOpen: () => {
           openWindow({
             id: "projects",
             title: "Projects",
@@ -71,7 +75,8 @@ export const DesktopView = () => {
       {
         label: "Mail",
         imageSrc: "/icons/mail.png",
-        onDoubleClick: () => {
+        altImage: "Mail",
+        onOpen: () => {
           openWindow({
             id: "mail",
             title: "Mail",
@@ -92,6 +97,12 @@ export const DesktopView = () => {
       {ICONS.map((desktopIcon) => (
         <DesktopItem key={desktopIcon.label} {...desktopIcon} />
       ))}
+      <DesktopItemLink
+        label="Source Code"
+        imageSrc="/icons/internet.png"
+        altImage="Internet"
+        href="https://github.com/premkumar5012002/portfolio"
+      />
     </div>
   );
 };
@@ -99,15 +110,43 @@ export const DesktopView = () => {
 const DesktopItem: FC<{
   label: string;
   imageSrc: string;
-  onDoubleClick?: () => void;
-}> = ({ label, imageSrc, onDoubleClick }) => {
+  altImage: string;
+  onOpen?: () => void;
+}> = ({ label, imageSrc, altImage, onOpen }) => {
   return (
     <button
-      className="group flex w-16 flex-col items-center gap-1 text-sm text-white"
-      onDoubleClick={onDoubleClick}
+      className="group flex w-16 flex-col items-center gap-1 text-center text-sm text-white"
+      onTouchStart={onOpen}
+      onDoubleClick={onOpen}
     >
       <div className="group-focus:brightness-[30%] group-focus:contrast-[0.9] group-focus:grayscale group-focus:-hue-rotate-180 group-focus:saturate-[400%] group-focus:sepia group-focus:filter">
-        <Image priority src={imageSrc} width={40} height={40} alt={label} />
+        <Image priority src={imageSrc} width={40} height={40} alt={altImage} />
+      </div>
+      <span className="group-focus:bg-accent group-focus:outline-dotted group-focus:outline-1">
+        {label}
+      </span>
+    </button>
+  );
+};
+
+const DesktopItemLink: FC<{
+  label: string;
+  imageSrc: string;
+  altImage: string;
+  href: string;
+}> = ({ label, imageSrc, altImage, href }) => {
+  const onOpen = () => {
+    open(href, "_blank");
+  };
+
+  return (
+    <button
+      onTouchStart={onOpen}
+      onDoubleClick={onOpen}
+      className="group flex w-16 flex-col items-center justify-center gap-1 text-center text-sm text-white"
+    >
+      <div className="group-focus:brightness-[30%] group-focus:contrast-[0.9] group-focus:grayscale group-focus:-hue-rotate-180 group-focus:saturate-[400%] group-focus:sepia group-focus:filter">
+        <Image priority src={imageSrc} width={40} height={40} alt={altImage} />
       </div>
       <span className="group-focus:bg-accent group-focus:outline-dotted group-focus:outline-1">
         {label}
