@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button-98 {
+  @apply flex items-center border-2 bg-[#d6d6cf] border-black border-t-white border-l-white;
+}
+
+.button-98:active {
+  @apply border-[#7c7c7c] border-r-white border-b-white;
+}
+
+.start-button-98 {
+  @apply flex items-center border-2 bg-[#d6d6cf] border-black border-t-white border-l-white font-bold px-1;
+}
+
+.start-button-98:focus {
+  @apply border-[#7c7c7c] border-r-white border-b-white;
+}
+
+.start-button-98:focus {
+  @apply outline-dotted outline-1 -outline-offset-4;
+}
+
+.active-window{
+  background: repeating-conic-gradient(#bdbebd 0 25%, #fff 0 50%) 50% / 2px 2px;
+}
