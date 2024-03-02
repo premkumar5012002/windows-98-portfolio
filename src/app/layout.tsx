@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 
 const ms_sans_serif = localFont({
   src: [
@@ -27,7 +28,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={ms_sans_serif.className}>
-      <body className="overflow-hidden">{children}</body>
+      <body className="overflow-hidden">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
