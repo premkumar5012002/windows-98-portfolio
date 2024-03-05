@@ -19,7 +19,7 @@ export const Modal: FC<{
         src={isError ? "/icons/error.png" : "/icons/success.png"}
       />
 
-      <p className="break-all text-sm font-bold">{message}</p>
+      <p className="text-sm font-bold">{message}</p>
 
       <button
         className="button-98 px-2"

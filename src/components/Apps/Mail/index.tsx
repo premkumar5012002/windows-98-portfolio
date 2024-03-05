@@ -11,8 +11,6 @@ import { Modal } from "../Modal";
 const initialState: FormState = {};
 
 export const Mail: FC = () => {
-  const { pending } = useFormStatus();
-
   const { openWindow } = useWindowStore();
 
   const { width, height } = useWindowSize();
@@ -34,15 +32,15 @@ export const Mail: FC = () => {
           <Modal
             message={
               state.error ? (
-                state.error === "Invalid data." ? (
-                  state.error
-                ) : (
-                  <span>
+                state.error.code === "internal_error" ? (
+                  <span className="break-all">
                     Unable to send your mail, please contact by mail{" "}
                     <span className="text-accent">
                       premkumar5012002@gmail.com
                     </span>
                   </span>
+                ) : (
+                  <span className="text-center">{state.error.message}</span>
                 )
               ) : (
                 state.message
@@ -109,21 +107,29 @@ export const Mail: FC = () => {
 
       {/* Send Button */}
       <div className="flex items-center gap-4 px-1 pb-1 pt-2">
-        <button
-          type="submit"
-          aria-disabled={pending}
-          className="button-98 w-fit gap-1 px-2 py-0.5 text-sm"
-        >
-          <Image
-            priority
-            width={20}
-            height={20}
-            alt="Send Mail"
-            src="/icons/send_mail.png"
-          />
-          {pending ? "Sending..." : "Send"}
-        </button>
+        <SendButton />
       </div>
     </form>
+  );
+};
+
+const SendButton = () => {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      aria-disabled={pending}
+      className="button-98 w-fit gap-1 px-2 py-0.5 text-sm"
+    >
+      <Image
+        priority
+        width={20}
+        height={20}
+        alt="Send Mail"
+        src="/icons/send_mail.png"
+      />
+      {pending ? "Sending..." : "Send"}
+    </button>
   );
 };

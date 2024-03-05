@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iconify/react": "^4.1.1",
+    "@upstash/ratelimit": "^1.0.1",
     "@upstash/redis": "^1.28.4",
     "@vercel/analytics": "^1.2.2",
     "autoprefixer": "10.4.18",
