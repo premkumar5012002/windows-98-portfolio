@@ -14,11 +14,6 @@ const ITEMS = [
     icon: "skill-icons:github-light",
   },
   {
-    label: "Linkedin",
-    href: "https://www.linkedin.com/in/premkumar5012002",
-    icon: "skill-icons:linkedin",
-  },
-  {
     label: "Twitter",
     href: "https://twitter.com/premkumar5102",
     icon: "skill-icons:twitter",
