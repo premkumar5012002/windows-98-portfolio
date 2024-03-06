@@ -18,11 +18,16 @@ const ITEMS = [
     href: "https://twitter.com/premkumar5102",
     icon: "skill-icons:twitter",
   },
+  {
+    label: "Source code",
+    href: "https://github.com/premkumar5012002/portfolio",
+    icon: "logos:opensource",
+  },
 ];
 
 export const StartMenu: FC = () => {
   return (
-    <div className="absolute bottom-10 left-0 flex h-[210px] w-48 border-2 border-[#7c7c7c] border-l-white border-t-white bg-silver">
+    <div className="absolute bottom-10 left-0 flex h-[210px] w-52 border-2 border-[#7c7c7c] border-l-white border-t-white bg-silver">
       <div className="w-[26px] bg-accent">
         <p className="translate-y-[170px] -rotate-90 text-lg font-bold text-white">
           Prem<span className="ml-1.5">Kumar</span>
