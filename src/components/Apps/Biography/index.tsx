@@ -53,11 +53,11 @@ export const Biography: FC = () => {
         <div className="pt-8">
           <h3 className="text-xl font-bold">Web Developer</h3>
           <p className="pt-3">
-            As a web developer, I've honed my skills through various projects,
-            with extensive experience in backend development and database
-            management using SQL or NoSQL solutions. My primary focus lies in
-            frontend development using React.js, alongside meticulous styling to
-            enhance user interfaces.
+            As a web developer, I&apos;ve honed my skills through various
+            projects, with extensive experience in backend development and
+            database management using SQL or NoSQL solutions. My primary focus
+            lies in frontend development using React.js, alongside meticulous
+            styling to enhance user interfaces.
           </p>
         </div>
 
