@@ -9,6 +9,11 @@ const ITEMS = [
     icon: "skill-icons:gmail-light",
   },
   {
+    label: "Linkedin",
+    href: "https://www.linkedin.com/in/premkumar5102",
+    icon: "skill-icons:linkedin",
+  },
+  {
     label: "Github",
     href: "https://github.com/premkumar5012002",
     icon: "skill-icons:github-light",
@@ -27,9 +32,9 @@ const ITEMS = [
 
 export const StartMenu: FC = () => {
   return (
-    <div className="absolute bottom-10 left-0 flex h-[210px] w-52 border-2 border-[#7c7c7c] border-l-white border-t-white bg-silver">
+    <div className="absolute bottom-10 left-0 flex h-[250px] w-52 border-2 border-[#7c7c7c] border-l-white border-t-white bg-silver">
       <div className="w-[26px] bg-accent">
-        <p className="translate-y-[170px] -rotate-90 text-lg font-bold text-white">
+        <p className="translate-y-[210px] -rotate-90 text-lg font-bold text-white">
           Prem<span className="ml-1.5">Kumar</span>
         </p>
       </div>
