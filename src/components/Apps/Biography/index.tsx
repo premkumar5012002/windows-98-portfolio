@@ -62,31 +62,6 @@ export const Biography: FC = () => {
         </div>
 
         <div className="pt-8">
-          <h3 className="text-xl font-bold">Mobile Developer</h3>
-          <p className="pt-3">
-            As a mobile developer, I specialize in creating mobile applications
-            using Flutter, both for personal and freelance projects. You can
-            explore examples of my work, such as{" "}
-            <a
-              target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.appmakerss.costfocus&hl=en&gl=US"
-              className="font-bold text-accent underline"
-            >
-              Costfocus
-            </a>{" "}
-            and{" "}
-            <a
-              target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.bitsandbytes.learntogether&hl=en&gl=IN"
-              className="font-bold text-accent underline"
-            >
-              Tutrpro
-            </a>{" "}
-            on the Google Play Store.
-          </p>
-        </div>
-
-        <div className="pt-8">
           <h3 className="text-xl font-bold">Résumé</h3>
           <p className="pt-3">
             <a

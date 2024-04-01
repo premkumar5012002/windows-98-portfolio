@@ -46,17 +46,6 @@ const PROJECTS = [
       "Implemented drawing tools such as rectangle tool, line tool, move tool and pencil tool.",
     ],
   },
-  {
-    title: "Costfocus",
-    image: "/screenshots/costfocus.webp",
-    imageAlt: "Costfocus Screenshot",
-    href: "https://play.google.com/store/apps/details?id=com.appmakerss.costfocus&hl=en&gl=US",
-    description: [
-      "Implemented a expense management app using Flutter and Firebase.",
-      "Integrated Firebase backend services for database management and user authentication.",
-      "Successfully launched the application on the Google Play Store.",
-    ],
-  },
 ];
 
 export const Projects: FC = () => {
