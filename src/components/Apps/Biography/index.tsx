@@ -24,22 +24,6 @@ export const Biography: FC = () => {
           <Icon icon="logos:docker-icon" className="h-6 w-6" />
         </div>
 
-        <div className="mt-6 border-2  border-white border-b-black border-r-black bg-accent p-4 font-sans text-white">
-          <p>
-            I&apos;m actively seeking a full stack developer position. If your
-            team needs someone with experience in React, Next.js, or backend
-            technologies like REST or GraphQL, feel free to reach out to me via
-            email at{" "}
-            <a
-              target="_blank"
-              className="font-bold underline"
-              href="mailto:premkumar5012002@gmail.com"
-            >
-              premkumar5012002@gmail.com
-            </a>{" "}
-          </p>
-        </div>
-
         <div className="pt-8">
           <h3 className="text-xl font-bold">About Me</h3>
           <p className="pt-3">
