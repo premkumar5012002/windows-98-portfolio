@@ -19,11 +19,6 @@ const ITEMS = [
     icon: "skill-icons:github-light",
   },
   {
-    label: "Twitter",
-    href: "https://twitter.com/premkumar5102",
-    icon: "skill-icons:twitter",
-  },
-  {
     label: "Source code",
     href: "https://github.com/premkumar5012002/portfolio",
     icon: "logos:opensource",
